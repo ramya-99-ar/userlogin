@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Userlogin</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+  </head>
+<% begin %>
+  <%= stylesheet_link_tag 'application', 'data-turbolinks-track' => 'reload', media: 'all' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+<% rescue %>
+  <script>
+    window.location.replace "#{user_session_url()}"
+  </script>
+<% end %>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
